@@ -1,6 +1,6 @@
 //get html element
 const productArea = document.querySelector('.product-area');
-console.log(productArea)
+console.log("hello", productArea)
 const productCartBtn = document.querySelector('.product-to-cart-btn');
 const productName = document.querySelector('.product-name');
 const productDescription = document.querySelector('.product-description');
@@ -34,7 +34,7 @@ function fetchData()
                 <h2>Price</h2>
                 <div class="price-n-button">
                     <p class="product-price">$${allData[datas].price}.000</p>
-                    <button class="product-to-cart-btn" title="Add to cart">+</button>
+                    <button class="product-to-cart-btn" onclick="myFunction()" title="Add to cart">+</button>
                 </div>
             </div>
         </div> 
@@ -44,6 +44,11 @@ function fetchData()
     })
 }
 
-// document.querySelector('product-to-cart-btn').addEventListener('click', ()=>{
+// document.querySelector('.product-to-cart-btn').addEventListener('click', ()=>{
 //     alert('fuck');
 // })
+
+const myFunction = () => {
+    console.log('Check me in the console')
+    alert('Buy Me')
+}

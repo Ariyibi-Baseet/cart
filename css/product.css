@@ -1,0 +1,314 @@
+/* 
+
+clip-path: polygon(0 0, 100% 0, 100% 11%, 0 18%); 
+clip-path: polygon(0 0, 100% 0, 100% 11%, 0 16%);
+
+*/
+:root{
+    --color1:#1e60a2;
+    --color2:#0F457B;
+    --color3:rgba(15,69,123,.7)
+}
+@font-face {
+    font-family:'JosefinSans Bold';
+    src: url('../font/JosefinSans-Bold.ttf');
+}
+@font-face {
+    font-family:'JosefinSans Light';
+    src: url('../font/JosefinSans-Light.ttf');
+}
+*{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    list-style-type:none;
+}
+
+body{
+    background-image:url('../img/GridIcon.svg');
+    background-size:cover;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    font-family:'JosefinSans Bold';
+}
+
+.navbar{
+    padding:20px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:var(--color1);
+    box-sizing:border-box;
+}
+.brand{
+    font-size:30px;
+    font-weight:bolder;
+    font-family:'JosefinSans Bold';
+    color:#fff;
+}
+.navlist > li > a > button{
+    padding:8px 25px;
+    border:none;
+    border-radius:5px;
+    background-color:lightgreen;
+    color:#fff;
+    font-weight:bold;
+    color:var(--color2);
+    cursor:pointer;
+}
+
+/* styling for view cart area starts here */
+.view-cart-area{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:var(--color3);
+    display:none;
+}
+.view-cart{
+    position:absolute;
+    z-index:1;
+    width:600px;
+    height:350px;
+    padding:20px 30px;
+    background-color: #fff;
+    border-radius:5px;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-40%);
+    overflow-y:auto;
+}
+.cart-item-wrapper{
+    margin-top:30px;
+}
+.view-cart-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.view-cart-head-txt{
+    text-align:center;
+}
+.purchase-btn{
+    padding:5px 17px;
+    font-weight:bold;
+    color:#fff;
+    background-color:var(--color2);
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom:5px;
+    /* border:2px solid red; */
+}
+.item-image > img{
+    width:2em;
+    border:2px solid black;
+}
+/* .cart-btn-wrapper{
+    display:flex;
+    width:20%;
+}
+.cart-btn-wrapper > button{
+    font-weight:bold;
+    font-size:18px;
+    padding:5px 12px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+}
+.cart-btn-wrapper > input[type=text]{
+    width:100px;
+}
+.cart-btn-wrapper > button:nth-child(1){
+    background-color:lightcoral;
+    color:#fff;
+}
+.cart-btn-wrapper > button:nth-child(2){
+    background-color:var(--color2);
+    color:lightgreen;
+} */
+.minus-btn,.plus-btn{
+    font-weight:bold;
+    font-size:18px;
+    padding:5px 10px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+}
+.minus-btn{
+    margin-right:5px;
+    background-color:lightcoral;
+    color:#fff;
+    padding:5px 12px;
+}
+.plus-btn{
+    margin-left:5px;
+    background-color:var(--color2);
+    color:lightgreen;
+}
+.quantity{
+    font-size:20px;
+}
+.calc-total{
+    display:flex;
+    margin:30px 0;
+}
+.discount{
+    width:40%;
+    background-color:lightcoral;
+    padding:20px;
+    color:#fff;
+    border-radius:5px;
+}
+.discount > p{
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+}
+.total{
+    width:60%;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+.total > p{
+    
+}
+
+.product-head-txt{
+    color:#fff;
+    text-align:center;
+    margin:30px 0 20px 0;
+    font-size:30px;
+}
+
+.product-area{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:20px 40px;
+}
+.product-card{
+    display:flex;
+    background-color: #fff;
+    padding:10px 13px;
+    border-radius:5px;
+    margin-bottom:15px;
+    /* width:25%; */
+}
+.product-image > img{
+    /* width:60px; */
+}
+.product-content{
+    margin-left:10px;
+}
+.product-content > h2{
+    font-size:17px;
+    font-weight:bolder;
+    margin:8px 0;
+    color:var(--color2);
+}
+.product-name,.product-description{
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+    margin-top:5px;
+}
+.price-n-button{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-top:5px;
+}
+.product-to-cart-btn{
+    padding:2px 20px;
+    font-weight:bold;
+    font-size:20px;
+    border:none;
+    border-radius:5px;
+    color:lightgreen;
+    background-color: var(--color2);
+    cursor:pointer;
+}
+
+/* styling for items details page */
+.items-details-page-wrapper{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:var(--color3);
+    display:none;
+}
+.items-details-page{
+    position:absolute;
+    z-index:1;
+    width:600px;
+    height:350px;
+    padding:20px;
+    background-color: #fff;
+    border-radius:5px;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-40%);
+    overflow-y:auto;
+}
+.back-btn{
+    padding:7px 20px;
+    font-weight:bold;
+    color:#fff;
+    background-color:var(--color2);
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-bottom:40px;
+}
+.item-name-n-price-wrapper{
+    display:flex;
+}
+.item-name,.item-price{
+    width:50%;
+}
+.item-name > p{
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+}
+.item-price > p{
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+}
+.item-description{
+    margin-top:30px;
+    padding:0 20px;
+}
+.item-description > h2{
+    text-align:center;
+}
+.item-description > p{
+    text-align:center;
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+    margin-top:10px;
+}
+.manufacturer{
+    text-align:center;
+    margin:20px 0;
+}
+.item-manufacturer{
+    font-family:'JosefinSans Light';
+    font-weight:bold;
+}
+.item-images{
+    margin:5px auto;
+    width:20%
+}
+.item-images > img{
+    width:3em;
+}

@@ -1,0 +1,49 @@
+{
+    "data": [
+      {
+        "itemId": 1,
+        "name": "Infinix Smart 6 Plus",
+        "price": 90,
+        "shortDescription": "Display: 6.70-inch (1080x2412)",
+        "description": "Infinix Smart 6 Plus will go on sale in India today via Flipkart. The new Infinix smartphone is available for purchase in Crystal Violet, Tranquil Sea Blue, and Miracle Black colour options and comes with a price tag of Rs. 7,999. It is powered by a MediaTek Helio G25 SoC coupled with 3GB of RAM. Infinix Smart 6 Plus mobile was launched on 29th July 2022. The phone comes with a 6.82-inch touchscreen display. Infinix Smart 6 Plus is powered by an octa-core MediaTek Helio G25 processor. It comes with 2GB, 3GB of RAM. The Infinix Smart 6 Plus runs Android 12 (Go edition) and is powered by a 5000mAh battery",
+        "manufacturer": "Infinix",
+        "Image": "img/Infinix_Smart_6_Plus.jpg"
+      },
+      {
+        "itemId": 2,
+        "name": "item 2",
+        "price": 50,
+        "shortDescription": "Display: 6.70-inch (1080x2412)",
+        "description": "some text description",
+        "manufacturer": "Apple",
+        "Image": "img/Asus_ZenFone_9.png"
+      },
+      {
+        "itemId": 3,
+        "name": "item 3",
+        "price": 30,
+        "shortDescription": "Display: 6.70-inch (1080x2412)",
+        "description": "some text description",
+        "manufacturer": "Samsung",
+        "Image": "img/Infinix_Hot_12.png"
+      },
+      {
+        "itemId": 4,
+        "name": "item 4",
+        "price": 10,
+        "shortDescription": "Display: 6.70-inch (1080x2412)",
+        "description": "some text description",
+        "manufacturer": "Google",
+        "Image": "img/Itel_A23S.png"
+      },
+      {
+        "itemId": 5,
+        "name": "item 5",
+        "price": 10.2,
+        "shortDescription": "Display: 6.70-inch (1080x2412)",
+        "description": "some text description",
+        "manufacturer": "Instagram",
+        "Image": "img/Moto_G32.jpg"
+      }
+    ]
+  }

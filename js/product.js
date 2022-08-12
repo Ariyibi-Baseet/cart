@@ -1,6 +1,5 @@
 //get html element
 const productArea = document.querySelector('.product-area');
-console.log(productArea)
 const productCartBtn = document.querySelector('.product-to-cart-btn');
 const productName = document.querySelector('.product-name');
 const productDescription = document.querySelector('.product-description');

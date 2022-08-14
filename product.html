@@ -14,8 +14,13 @@
     <ul class="navlist">
         <li>    
             <a href="#">
+<<<<<<< HEAD
                 <button>
                     <span>view cart</span> (<span class="counter">0</span>)
+=======
+                <button onclick="displayCart()">
+                    <span>view cart</span> (<span class="count">0</span>)
+>>>>>>> 6a79f684bddb645f508ebc3b773592d878fab9f2
                 </button>
             </a>
         </li>
@@ -23,13 +28,13 @@
 </nav>
 
 <!--======= VIEW CART AREA =====================-->
-<div class="view-cart-area">
+<div class="view-cart-area" id="cartDiv">
     <div class="view-cart">
         <div class="view-cart-head">
             <h2 class="view-cart-head-txt">Phonex Cart List</h2>
             <button class="purchase-btn">Purchase</button>
         </div>
-        <div class="cart-item-wrapper">
+        <div class="cart-item-wrapper" id="cartItemWrapper">
             <div class="cart-item">
                 <div class="item-image">
                     <img src="./img/Itel_A23S.png" alt="">
@@ -75,7 +80,7 @@
 </section>
 
 <!-- ITEMS DETAILS PAGE SECTION STARTS HERE-->
-<div class="items-details-page-wrapper">
+<div class="items-details-page-wrapper" id="descriptionDiv">
     <div class="items-details-page">
         <button class="back-btn">
             Back
@@ -83,21 +88,21 @@
         <div class="item-name-n-price-wrapper">
             <div class="item-name">
                 <h2>Product Name</h2>
-                <p>Product name here...</p>
+                <p id="itemName">Product name here...</p>
             </div>
             <div class="item-price">
                 <h2>Price</h2>
-                <p>Product price</p>
+                <p id="itemPrice">Product price</p>
             </div>
         </div>
         <div class="item-description">
             <h2>Description</h2>
-            <p>
+            <p id="itemDescription">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident debitis quo sit corrupti, quia molestiae odit, beatae eum explicabo omnis vitae, ab nihil assumenda dolor natus cupiditate. Qui cumque corrupti quasi ea similique quibusdam laboriosam maiores atque repellendus quas dolorum deserunt harum eos debitis assumenda ad, recusandae impedit vitae quod nemo numquam? Id vel officiis earum harum facere aliquid, hic, laborum nulla quia corporis inventore, fuga mollitia numquam eum est eius aut culpa dolorum iure ex libero explicabo assumenda minus ad. Voluptatibus eius, itaque in blanditiis cumque facilis eveniet harum? Alias, omnis officiis at obcaecati modi quidem possimus maxime laborum.
             </p>
-            <h3 class="manufacturer"><span>Manufacturer:</span> &nbsp;&nbsp;<span class="item-manufacturer">Maufacturer name here...</span></h3>
+            <h3 class="manufacturer"><span>Manufacturer:</span> &nbsp;&nbsp;<span class="item-manufacturer" id="itemManufacturer">Maufacturer name here...</span></h3>
             <div class="item-images">
-                <img src="./phone images/Moto G32.jpg" alt="">
+                <img src="./phone images/Moto G32.jpg" alt="" id="itemImage">
             </div>
         </div>
     </div>

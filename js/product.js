@@ -1,5 +1,7 @@
 //get html element
 const productArea = document.querySelector('.product-area');
+console.log("hello", productArea);
+
 const productCartBtn = document.querySelector('.product-to-cart-btn');
 const productName = document.querySelector('.product-name');
 const productDescription = document.querySelector('.product-description');
@@ -9,7 +11,9 @@ const productPrice = document.querySelector('.product-price');
 const addToCartBtn = document.querySelector('.product-to-cart');
 
 // function to fetch product data api
-fetchData();
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
+})
 
 function fetchData()
 {
@@ -32,8 +36,8 @@ function fetchData()
                 <p class="product-description">${allData[datas].shortDescription}</p>
                 <h2>Price</h2>
                 <div class="price-n-button">
-                    <p class="product-price">$${allData[datas].price}.000</p>
-                    <button class="product-to-cart-btn" title="Add to cart">+</button>
+                    <p class="product-price">${allData[datas].price}.000</p>
+                    <button class="product-to-cart-btn" onclick="myFunction()" title="Add to cart">+</button>
                 </div>
             </div>
         </div> 
@@ -43,6 +47,10 @@ function fetchData()
     })
 }
 
-// document.querySelector('product-to-cart-btn').addEventListener('click', ()=>{
+// document.querySelector('.product-to-cart-btn').addEventListener('click', ()=>{
 //     alert('fuck');
 // })
+
+const myFunction = (e) => {
+    console.log(e.target);
+}

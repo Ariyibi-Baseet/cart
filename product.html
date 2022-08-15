@@ -13,13 +13,14 @@
     <span class="brand">Phonex</span>
     <ul class="navlist">
         <li>    
-            <a href="#">
-                <button>
+            <!-- <a href="#"> -->
+                <!-- <button>
                     <span>view cart</span> (<span class="counter">0</span>)
+                </button> -->
                 <button onclick="displayCart()">
                     <span>view cart</span> (<span class="count">0</span>)
                 </button>
-            </a>
+            <!-- </a> -->
         </li>
     </ul>
 </nav>
@@ -30,9 +31,10 @@
         <div class="view-cart-head">
             <h2 class="view-cart-head-txt">Phonex Cart List</h2>
             <button class="purchase-btn">Purchase</button>
+            <button class="desc-back-btn" onclick="closeCart()">Back</button>
         </div>
         <div class="cart-item-wrapper" id="cartItemWrapper">
-            <div class="cart-item">
+            <!-- <div class="cart-item">
                 <div class="item-image">
                     <img src="./img/Itel_A23S.png" alt="">
                 </div>
@@ -50,7 +52,7 @@
                 <div>
                 <p class="total">Total</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="calc-total">
@@ -77,9 +79,9 @@
 </section>
 
 <!-- ITEMS DETAILS PAGE SECTION STARTS HERE-->
-<div class="items-details-page-wrapper" id="descriptionDiv">
+<div class="items-details-page-wrapper">
     <div class="items-details-page">
-        <button class="back-btn">
+        <button class="back-btn" onclick="closeDescriptionModal()">
             Back
         </button>
         <div class="item-name-n-price-wrapper">

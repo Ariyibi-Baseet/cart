@@ -6,11 +6,11 @@ const productName = document.querySelector('.product-name');
 const productDescription = document.querySelector('.product-description');
 const productPrice = document.querySelector('.product-price');
 
-console.log('aaaaaaaa', productCartList)
+// console.log('aaaaaaaa', productCartList)
 // btn
 const addToCartBtn = document.querySelector('.product-to-cart');
 
-let allData2
+let allData2;
 let cartList = [];
 // function to fetch product data api
 fetchData();
@@ -49,28 +49,31 @@ function fetchData()
 }
 
 
+// fetchCartListData();
+
 function fetchCartListData(){
     let appendProductData = '';
-        for(let i=0; i<=cartList.length; i++)
+    result = {};
+        for(let i=0; i<cartList.length; i++)
         {
             appendProductData += `
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="./img/Itel_A23S.png" alt="">
+                    <img src="${cartList[i].Image}" alt="">
                 </div>
                 <div>
                 <p class="cart-item-name">${cartList[i].name}</p>
                 </div>
                 <div>
                     <button class="minus-btn">-</button>
-                    <span class="quantity">2</span>
+                    <span class="quantity">1</span>
                     <button class="plus-btn">+</button>
                 </div>
                 <div>
                 <p>=</p>
                 </div>
                 <div>
-                <p class="total">Total</p>
+                <p class="total">price</</p>
                 </div>
             </div> 
             `
@@ -81,34 +84,86 @@ function fetchCartListData(){
 const myFunction = (e) => {
     console.log('Check me in the console', e)
     cartList.push(allData2[e])
-  console.log('hhhhh', cartList)
+    // console.log(allData2[e]);
+    // console.log('hhhhh', cartList);
+    incrementCartNumber();
+}
+
+
+function incrementCartNumber()
+{
+    // console.log(cartNum)
+    // if(cartNum)
+    // {
+    //     cartNum = +1;
+    // }
+    // console.log(allData2)
+    // cartNum.push(cartList)
 }
 
 function displayCart() {
-    var x = document.getElementById("cartDiv");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      fetchCartListData()
-    } else {
-      x.style.display = "none";
+    var viewCartArea = document.getElementById("cartDiv");
+    if(viewCartArea.style.display = 'none')
+    {
+        viewCartArea.style.display = 'block';
     }
+    fetchCartListData();
   }
 
-function displayDescription(e) {
-    var x = document.getElementById("descriptionDiv");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        var x = document.getElementById("itemName");
-        var y = document.getElementById("itemPrice");
-        var z = document.getElementById("itemDescription");
-        var a = document.getElementById("itemManufacturer");
-        var b = document.getElementById("itemManufacturer");
-        x.innerText = allData2[e].name
-        y.innerText = allData2[e].price
-        z.innerText = allData2[e].shortDescription
-        a.innerText = allData2[e].manufacturer
-        b.src = allData2[e].Image
-    } else {
-      x.style.display = "none";
+function closeCart(){
+    var viewCartArea = document.getElementById("cartDiv");
+    if(viewCartArea.style.display = 'block')
+    {
+        viewCartArea.style.display = 'none';
     }
+}
+
+function stopPropagation()
+{
+    document.querySelectorAll('.product-to-cart-btn')[0].addEventListener('click', (e)=>{
+        e.stopPropagation();
+    })
+    document.querySelectorAll('.product-to-cart-btn')[1].addEventListener('click', (e)=>{
+        e.stopPropagation();
+    })
+    document.querySelectorAll('.product-to-cart-btn')[2].addEventListener('click', (e)=>{
+        e.stopPropagation();
+    })
+    document.querySelectorAll('.product-to-cart-btn')[3].addEventListener('click', (e)=>{
+        e.stopPropagation();
+    })
+    document.querySelectorAll('.product-to-cart-btn')[4].addEventListener('click', (e)=>{
+        e.stopPropagation();
+    })
+}
+function displayDescription(e) {
+    var itemsDetailsPageWrapper = document.querySelector(".items-details-page-wrapper");
+    stopPropagation()
+    if (itemsDetailsPageWrapper.style.display === "none") {
+        itemsDetailsPageWrapper.style.display = "block";
+        var itemName = document.getElementById("itemName");
+        var itemPrice = document.getElementById("itemPrice");
+        var itemDescription= document.getElementById("itemDescription");
+        var itemManufacturer = document.getElementById("itemManufacturer");
+        var itemImage = document.getElementById("itemImage");
+        console.log(itemImage);
+        itemName.innerText = allData2[e].name;
+        itemPrice.innerText = allData2[e].price;
+        itemDescription.innerText = allData2[e].description;
+        itemManufacturer.innerText = allData2[e].manufacturer;
+        itemImage.src = allData2[e].Image;
+    } else {
+        itemsDetailsPageWrapper.style.display = "none";
+    }
+    // ,,
   }
+
+// close modal
+function closeDescriptionModal()
+{
+    let descriptionModal = document.querySelector(".items-details-page-wrapper");
+    if(descriptionModal.style.display === 'block')
+    {
+        descriptionModal.style.display = 'none';
+    }
+}

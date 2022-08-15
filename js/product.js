@@ -12,6 +12,7 @@ const addToCartBtn = document.querySelector('.product-to-cart');
 
 let allData2;
 let cartList = [];
+let itemQty = []
 // function to fetch product data api
 fetchData();
 
@@ -65,15 +66,15 @@ function fetchCartListData(){
                 <p class="cart-item-name">${cartList[i].name}</p>
                 </div>
                 <div>
-                    <button class="minus-btn">-</button>
-                    <span class="quantity">1</span>
-                    <button class="plus-btn">+</button>
+                    <button class="minus-btn" onclick="decreaseItem(${i})">-</button>
+                    <span class="quantity" id="quantity${i}">0</span>
+                    <button class="plus-btn" onclick="increaseItem(${i})">+</button>
                 </div>
                 <div>
                 <p>=</p>
                 </div>
                 <div>
-                <p class="total">price</</p>
+                <p class="total" id="price${i}">${Number(cartList[i].price)} price</</p>
                 </div>
             </div> 
             `
@@ -83,22 +84,47 @@ function fetchCartListData(){
 
 const myFunction = (e) => {
     console.log('Check me in the console', e)
+    cartList = [...new Set(cartList)];
     cartList.push(allData2[e])
     // console.log(allData2[e]);
     // console.log('hhhhh', cartList);
-    incrementCartNumber();
+    // incrementCartNumber();
 }
 
 
-function incrementCartNumber()
+function increaseItem(e)
 {
-    // console.log(cartNum)
-    // if(cartNum)
-    // {
-    //     cartNum = +1;
-    // }
-    // console.log(allData2)
-    // cartNum.push(cartList)
+    if(itemQty[e] == undefined){
+        itemQty[e] = 0
+        itemQty[e] = itemQty[e] + 1
+    } else
+{
+    itemQty[e] = itemQty[e] + 1
+
+}    
+    var itemName = document.getElementById(`quantity${e}`);
+    var itemPrice = document.getElementById(`price${e}`);
+    itemName.innerText = itemQty[e];
+    itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
+
+
+}
+
+function decreaseItem(e)
+{
+    if(itemQty[e] == undefined){
+        itemQty[e] = 0
+    } else
+{
+    itemQty[e] = itemQty[e] - 1
+
+} 
+var itemName = document.getElementById(`quantity${e}`);
+var itemPrice = document.getElementById(`price${e}`);
+    itemName.innerText = itemQty[e];
+    itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
+
+
 }
 
 function displayCart() {

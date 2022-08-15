@@ -75,7 +75,7 @@ function fetchCartListData(){
                 <p>=</p>
                 </div>
                 <div>
-                <p class="total" id="price${i}">${Number(cartList[i].price)} price</</p>
+                <p class="total" id="price${i}"></</p>
                 </div>
             </div> 
             `
@@ -87,9 +87,6 @@ const myFunction = (e) => {
     console.log('Check me in the console', e)
     cartList = [...new Set(cartList)];
     cartList.push(allData2[e])
-    // console.log(allData2[e]);
-    // console.log('hhhhh', cartList);
-    // incrementCartNumber();
 }
 
 
@@ -106,11 +103,21 @@ function increaseItem(e)
     var itemName = document.getElementById(`quantity${e}`);
     var itemPrice = document.getElementById(`price${e}`);
     var finalAmount = document.getElementById(`finalAmount`);
+    var deductedAmount = document.getElementById(`deductedAmount`);
     itemName.innerText = itemQty[e];
     itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
     totalItemPrice[e] = (Number(itemQty[e]) * Number(cartList[e].price))
     let totalPrice = totalItemPrice.reduce((a,b)=> a + b, 0)
-    finalAmount.innerText = totalPrice;
+    if(totalPrice >= 80 && totalPrice <= 99){
+        deductedAmount.innerText = totalPrice * 0.15;
+        finalAmount.innerText = totalPrice - (totalPrice * 0.15);
+    } else if(totalPrice >= 100){
+        deductedAmount.innerText = totalPrice * 0.2;
+        finalAmount.innerText = totalPrice - (totalPrice * 0.2);
+    } else {
+        deductedAmount.innerText = 0 
+        finalAmount.innerText = totalPrice
+    }
 
 }
 
@@ -130,7 +137,17 @@ var finalAmount = document.getElementById(`finalAmount`);
     itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
     totalItemPrice[e] = (Number(itemQty[e]) * Number(cartList[e].price))
     let totalPrice = totalItemPrice.reduce((a,b)=> a + b, 0)
-    finalAmount.innerText = totalPrice;
+    
+    if(totalPrice >= 80 && totalPrice <= 99){
+        deductedAmount.innerText = totalPrice * 0.15;
+        finalAmount.innerText = totalPrice - (totalPrice * 0.15);
+    } else if(totalPrice >= 100){
+        deductedAmount.innerText = totalPrice * 0.2;
+        finalAmount.innerText = totalPrice - (totalPrice * 0.2);
+    } else {
+        deductedAmount.innerText = 0 
+        finalAmount.innerText = totalPrice
+    }
 }
 
 function displayCart() {

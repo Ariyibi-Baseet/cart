@@ -84,9 +84,10 @@ function fetchCartListData(){
 }
 
 const myFunction = (e) => {
-    console.log('Check me in the console', e)
     cartList = [...new Set(cartList)];
     cartList.push(allData2[e])
+    var itemName = document.getElementById(`countCart`);
+    itemName.innerText = cartList.length
 }
 
 

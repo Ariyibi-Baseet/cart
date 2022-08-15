@@ -13,6 +13,7 @@ const addToCartBtn = document.querySelector('.product-to-cart');
 let allData2;
 let cartList = [];
 let itemQty = []
+let totalItemPrice = []
 // function to fetch product data api
 fetchData();
 
@@ -104,9 +105,12 @@ function increaseItem(e)
 }    
     var itemName = document.getElementById(`quantity${e}`);
     var itemPrice = document.getElementById(`price${e}`);
+    var finalAmount = document.getElementById(`finalAmount`);
     itemName.innerText = itemQty[e];
     itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
-
+    totalItemPrice[e] = (Number(itemQty[e]) * Number(cartList[e].price))
+    let totalPrice = totalItemPrice.reduce((a,b)=> a + b, 0)
+    finalAmount.innerText = totalPrice;
 
 }
 
@@ -121,10 +125,12 @@ function decreaseItem(e)
 } 
 var itemName = document.getElementById(`quantity${e}`);
 var itemPrice = document.getElementById(`price${e}`);
+var finalAmount = document.getElementById(`finalAmount`);
     itemName.innerText = itemQty[e];
     itemPrice.innerText = Number(itemQty[e]) * Number(cartList[e].price);
-
-
+    totalItemPrice[e] = (Number(itemQty[e]) * Number(cartList[e].price))
+    let totalPrice = totalItemPrice.reduce((a,b)=> a + b, 0)
+    finalAmount.innerText = totalPrice;
 }
 
 function displayCart() {

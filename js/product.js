@@ -90,6 +90,12 @@ const myFunction = (e) => {
     itemName.innerText = cartList.length
 }
 
+const myPurchase = (e) => {
+    var finalAmount = document.getElementById(`finalAmount`).innerText;
+    var deductedAmount = document.getElementById(`deductedAmount`).innerText;
+    alert(`Successfully purchased item for ${finalAmount} after ${deductedAmount} discount`)
+}
+
 
 function increaseItem(e)
 {
